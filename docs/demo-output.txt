@@ -1,0 +1,46 @@
+=== fintech-project ===
+SECURITY AUDIT
+Score: 0/100
+Critical issues: 4
+CRITICAL SEC001 PaymentService.java: Hardcoded credentials
+HIGH SEC004 PaymentService.java: High-risk source complexity > 15
+CRITICAL SEC001 application.properties: Hardcoded credentials
+CRITICAL SEC003 application.properties: Insecure configuration
+CRITICAL SEC002 pom.xml: Vulnerable dependency: legacy-crypto
+
+PROJECT STATISTICS
+Total files: 5
+Lines of code: 580
+Source files: 2
+Test files: 1
+Tests: 8
+Dependencies: 3
+Average complexity: 13.00
+Test/source ratio: 0.50
+
+QUALITY GATE
+Security: FAIL
+Complexity: FAIL
+Tests: PASS
+Production scope: PASS
+FINAL RESULT: FAILED
+
+COMPLIANCE
+Result: FAIL
+COMP001 PaymentService.java: Exposed credentials
+COMP001 application.properties: Exposed credentials
+COMP004 pom.xml: Prohibited dependency: legacy-crypto
+COMP002 pom.xml: Missing version: logging-api
+COMP003 UserService.java: Production module has no active tests: users.UserService
+
+TECHNICAL DEBT
+Estimated remediation: 520 minutes
+
+=== release-ready ===
+QUALITY GATE
+Security: PASS
+Complexity: PASS
+Tests: PASS
+Production scope: PASS
+FINAL RESULT: PASSED
+
