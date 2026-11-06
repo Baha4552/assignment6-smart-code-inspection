@@ -13,6 +13,8 @@ public final class Main {
         System.out.println(quality.report()); System.out.println(compliance.report());
         QualityGateVisitor ready = new QualityGateVisitor();
         DemoProjects.releaseReady().accept(ready);
+        TechnicalDebtVisitor debt = new TechnicalDebtVisitor();
+        project.accept(debt); System.out.println(debt.report());
         System.out.println("=== release-ready ==="); System.out.println(ready.report());
     }
 }
